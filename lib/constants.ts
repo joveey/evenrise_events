@@ -24,7 +24,7 @@ export const CONTACT = {
 // ─── WhatsApp CTA helper ──────────────────────────────────────────────────────
 export const getWhatsAppUrl = (message?: string) => {
   const encoded = encodeURIComponent(
-    message ?? `Halo EvenRise Events, saya ingin mengetahui lebih lanjut tentang layanan Anda.`
+    message ?? `Hi EvenRise Events, I'd like to learn more about your event management services.`
   );
   return `https://wa.me/${CONTACT.whatsapp}?text=${encoded}`;
 };

@@ -212,7 +212,7 @@ export default function EventsPage() {
 
           {/* ── Category pills row ────────────────────────────────────────── */}
           <div
-            className="mb-10 flex flex-wrap items-center gap-2 border-b border-cream-dark pb-8"
+            className="mb-10 flex items-center gap-2 border-b border-cream-dark pb-4 md:pb-8 overflow-x-auto no-scrollbar flex-nowrap md:flex-wrap"
             role="group"
             aria-label="Filter by category"
           >
@@ -220,7 +220,7 @@ export default function EventsPage() {
               onClick={() => setCategoryFilter("all")}
               aria-pressed={categoryFilter === "all"}
               className={cn(
-                "inline-flex items-center rounded-full px-4 py-1.5 font-body text-xs font-medium tracking-wide transition-all duration-200",
+                "inline-flex shrink-0 items-center rounded-full px-4 py-1.5 font-body text-xs font-medium tracking-wide transition-all duration-200",
                 categoryFilter === "all"
                   ? "bg-navy text-cream"
                   : "border border-navy/15 bg-white text-navy/55 hover:border-navy/30 hover:text-navy"
@@ -234,7 +234,7 @@ export default function EventsPage() {
                 onClick={() => setCategoryFilter(cat)}
                 aria-pressed={categoryFilter === cat}
                 className={cn(
-                  "inline-flex items-center rounded-full px-4 py-1.5 font-body text-xs font-medium tracking-wide transition-all duration-200",
+                  "inline-flex shrink-0 items-center rounded-full px-4 py-1.5 font-body text-xs font-medium tracking-wide transition-all duration-200",
                   categoryFilter === cat
                     ? "bg-navy text-cream"
                     : "border border-navy/15 bg-white text-navy/55 hover:border-navy/30 hover:text-navy"
@@ -248,7 +248,7 @@ export default function EventsPage() {
             {hasActiveFilter && (
               <button
                 onClick={resetFilters}
-                className="ml-auto font-body text-xs text-text-muted underline-offset-2 transition-colors hover:text-gold hover:underline"
+                className="ml-auto shrink-0 font-body text-xs text-text-muted underline-offset-2 transition-colors hover:text-gold hover:underline pl-4"
               >
                 Reset filters
               </button>
@@ -389,19 +389,15 @@ export default function EventsPage() {
               target="_blank"
               rel="noopener noreferrer"
               id="events-cta-whatsapp"
-              className="inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 font-body text-sm font-semibold text-navy transition-all duration-200 hover:brightness-110"
-              style={{
-                background:
-                  "linear-gradient(135deg, #E8C97A 0%, #C9A24B 55%, #9C7A2E 100%)",
-              }}
+              className="btn btn-primary"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-              Let&apos;s Talk
+              Schedule Event Consultation
             </a>
             <Link
               href="/contact"
               id="events-cta-contact"
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-8 py-3.5 font-body text-sm font-medium text-white/75 transition-all duration-200 hover:border-gold/60 hover:text-gold"
+              className="btn btn-outline border-white/30 text-white hover:bg-white/10 hover:border-gold"
             >
               Send an Enquiry
             </Link>

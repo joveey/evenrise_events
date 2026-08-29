@@ -1,137 +1,137 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, type Variants } from "framer-motion";
-import {
-  Briefcase,
-  Heart,
-  Package,
-  BookOpen,
-  Star,
-  MonitorSmartphone,
-} from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
 
-// ─── Services Data (English) ──────────────────────────────────────────────────
 const SERVICES = [
   {
-    icon: Briefcase,
-    title: "Corporate Events & Conferences",
+    index: "01",
+    title: "Corporate Summits & Leadership Forums",
     description:
-      "Annual meetings, town halls, product launches, and national or international conferences — designed and executed with precision from start to finish.",
+      "High-level regional conferences, C-suite roundtables, and annual general meetings delivered with precision protocol and broadcast-grade technical execution.",
+    capabilities: [
+      "Keynote Stage & Curved LED Scenography",
+      "VIP Delegate Protocol & C-Suite Logistics",
+      "Simultaneous Interpretation & Live Broadcast",
+    ],
   },
   {
-    icon: Heart,
-    title: "Weddings & Private Celebrations",
+    index: "02",
+    title: "Trade Exhibitions & Brand Pavilions",
     description:
-      "From intimate ceremonies to grand receptions and milestone celebrations — every detail is thoughtfully crafted to create memories that last a lifetime.",
+      "World-class exhibition environments, custom modular pavilions, and immersive product reveal staging designed to maximize brand influence.",
+    capabilities: [
+      "Architectural Booth Engineering & Build",
+      "Experiential Technology & Interactive Demos",
+      "Delegate Flow & Badge Registration Systems",
+    ],
   },
   {
-    icon: Package,
-    title: "Exhibitions & Product Launches",
+    index: "03",
+    title: "Annual Galas & Prestige Award Ceremonies",
     description:
-      "Trade shows, exhibition booths, and product reveals that command attention — we ensure your brand makes a lasting impression on every attendee.",
+      "Black-tie gala dinners and industry accolade evenings characterized by dramatic lighting, five-star culinary orchestration, and flawless stage timing.",
+    capabilities: [
+      "Fine Dining Tabletop & Floral Artistry",
+      "Award Production & Multi-Camera Show Calling",
+      "Celebrity Entertainment & Orchestral Curation",
+    ],
   },
   {
-    icon: BookOpen,
-    title: "Seminars & Workshops",
+    index: "04",
+    title: "Executive Seminars & Thought-Leadership",
     description:
-      "From inspiring keynotes to intensive training sessions — we handle all technical and logistical needs so your participants stay focused on the content.",
+      "Curated knowledge-sharing formats and executive workshop tracks that cultivate high engagement, strategic dialogue, and productive collaboration.",
+    capabilities: [
+      "Acoustic & Audio Optimization",
+      "Executive Hospitality & Delegate Kits",
+      "Interactive Q&A & Real-Time Polling",
+    ],
   },
   {
-    icon: Star,
-    title: "Gala Dinners & Award Nights",
+    index: "05",
+    title: "Bespoke Celebrations & Private Galas",
     description:
-      "Prestigious award ceremonies and elegant gala evenings that leave guests with a deep sense of occasion — elevated atmosphere, flawless execution.",
+      "Discreet, highly curated landmark anniversaries and private milestones designed with timeless architectural styling and uncompromising hospitality.",
+    capabilities: [
+      "5-Star Destination Venue Scouting",
+      "Custom Spatial Atmosphere & Lighting",
+      "Dedicated Private Concierge Team",
+    ],
   },
   {
-    icon: MonitorSmartphone,
-    title: "Virtual & Hybrid Events",
+    index: "06",
+    title: "Hybrid & Multi-City Broadcast Summits",
     description:
-      "Reach a wider audience with no geographic limits. Professional streaming platforms, real-time engagement, and broadcast-quality production values.",
+      "Synchronous multi-hub productions connecting physical stages across Jakarta, Singapore, and regional financial centers via low-latency secure streaming.",
+    capabilities: [
+      "Multi-City Live Satellite/Fiber Feeds",
+      "Secure Enterprise Streaming Portals",
+      "Post-Event Analytics & On-Demand Replay",
+    ],
   },
 ] as const;
 
-// ─── Animation Variants ────────────────────────────────────────────────────────
 const stagger: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
 };
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// ─── Component ────────────────────────────────────────────────────────────────
 export default function ServicesSection() {
   return (
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="section-padding overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #EDE9E0 0%, #F7F5F0 100%)" }}
+      className="section-padding bg-cream border-t border-cream-darker"
     >
       <div className="container-site">
-        {/* ── Section Header ───────────────────────────────────────────── */}
+        {/* Header */}
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "0px", amount: 0.1 }}
-          className="mb-16 text-center md:mb-20"
+          viewport={{ once: true, amount: 0.1 }}
+          className="w-full mb-14 md:mb-18 text-center flex flex-col items-center"
         >
-          {/* Eyebrow */}
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-3">
-            <span
-              className="h-px w-8"
-              style={{ background: "linear-gradient(90deg, transparent 0%, #C9A24B 100%)" }}
-              aria-hidden="true"
-            />
-            <p className="font-body text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-              What We Offer
-            </p>
-            <span
-              className="h-px w-8"
-              style={{ background: "linear-gradient(90deg, #C9A24B 0%, transparent 100%)" }}
-              aria-hidden="true"
-            />
-          </motion.div>
+          <div className="max-w-2xl flex flex-col items-center">
+            <motion.h2
+              variants={fadeUp}
+              id="services-heading"
+              className="font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
+            >
+              Services Tailored to{" "}
+              <em className="italic">Every Occasion</em>
+            </motion.h2>
 
-          {/* Heading */}
-          <motion.h2
-            variants={fadeUp}
-            id="services-heading"
-            className="mt-4 font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
-          >
-            Services Tailored to{" "}
-            <em className="italic">Every Occasion</em>
-          </motion.h2>
-
-          {/* Sub-copy */}
-          <motion.p
-            variants={fadeUp}
-            className="mx-auto mt-5 max-w-lg font-body text-[0.9375rem] leading-relaxed text-text-secondary"
-          >
-            From intimate gatherings to grand productions — we bring the same
-            level of care, professionalism, and attention to detail to every event we touch.
-          </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 font-body text-base leading-relaxed text-text-secondary max-w-xl"
+            >
+              End-to-end event management frameworks built for corporate excellence, institutional scale, and uncompromising precision.
+            </motion.p>
+          </div>
         </motion.div>
 
-        {/* ── Services Grid ────────────────────────────────────────────── */}
+        {/* Architectural Services Grid */}
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "0px", amount: 0.1 }}
-          className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          viewport={{ once: true, amount: 0.05 }}
+          className="border-b border-r border-cream-darker bg-white/40 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 shadow-[0_4px_24px_rgba(11,27,51,0.03)]"
         >
           {SERVICES.map((service) => (
-            <motion.div key={service.title} variants={fadeUp}>
+            <motion.div key={service.title} variants={fadeUp} className="h-full">
               <ServiceCard
-                icon={service.icon}
+                index={service.index}
                 title={service.title}
                 description={service.description}
+                capabilities={service.capabilities}
               />
             </motion.div>
           ))}

@@ -1,25 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SITE } from "@/lib/constants";
-
-// ─── Fonts ─────────────────────────────────────────────────────────────────────
-const cormorantGaramond = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
+import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 
 // ─── Site Metadata ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
@@ -72,8 +56,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
-
 // ─── Root Layout ───────────────────────────────────────────────────────────────
 export default function RootLayout({
   children,
@@ -81,24 +63,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${cormorantGaramond.variable} ${inter.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased">
-        {/* Sticky Navbar */}
         <Navbar />
-
-        {/* Page Content */}
         <main className="flex-1 flex flex-col" id="main-content">
           {children}
         </main>
-
-        {/* Footer */}
         <Footer />
-        
-        {/* Global Floating Actions */}
         <FloatingWhatsAppButton />
       </body>
     </html>

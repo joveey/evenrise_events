@@ -40,39 +40,25 @@ export default function UpcomingEventsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px", amount: 0.1 }}
-          className="mb-14 text-center md:mb-16"
+          className="w-full mb-16 md:mb-20 text-center flex flex-col items-center"
         >
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-3">
-            <span
-              className="h-px w-8"
-              style={{ background: "linear-gradient(90deg, transparent 0%, #C9A24B 100%)" }}
-              aria-hidden="true"
-            />
-            <p className="font-body text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-              Upcoming Events
-            </p>
-            <span
-              className="h-px w-8"
-              style={{ background: "linear-gradient(90deg, #C9A24B 0%, transparent 100%)" }}
-              aria-hidden="true"
-            />
-          </motion.div>
+          <div className="max-w-xl flex flex-col items-center">
+            <motion.h2
+              variants={fadeUp}
+              id="events-heading"
+              className="font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
+            >
+              What We&apos;re Working On
+            </motion.h2>
 
-          <motion.h2
-            variants={fadeUp}
-            id="events-heading"
-            className="mt-4 font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
-          >
-            What We&apos;re Working On
-          </motion.h2>
-
-          <motion.p
-            variants={fadeUp}
-            className="mx-auto mt-4 max-w-lg font-body text-[0.9375rem] leading-relaxed text-text-secondary"
-          >
-            A look at what our team is currently organising — and what&apos;s
-            coming up next. Click any event to learn more.
-          </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 font-body text-base leading-relaxed text-text-secondary"
+            >
+              A look at what our team is currently organising — and what&apos;s
+              coming up next. Click any event to learn more.
+            </motion.p>
+          </div>
         </motion.div>
 
         {/* ── Events Grid ───────────────────────────────────────────── */}
@@ -81,7 +67,7 @@ export default function UpcomingEventsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px", amount: 0.1 }}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10"
         >
           {events.map((event) => (
             <motion.div key={event.id} variants={cardVariant}>

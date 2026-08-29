@@ -48,7 +48,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy text-cream/80" aria-labelledby="footer-heading">
+    <footer className="bg-navy text-cream/80 border-t border-white/10" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -62,13 +62,14 @@ export default function Footer() {
             {/* Logo */}
             <Link href="/" aria-label={`${SITE.name} — Back to Home`}>
               <div className="flex items-center gap-3">
-                <div className="relative h-12 w-12 overflow-hidden rounded-sm bg-cream/10">
+                <div className="relative h-12 w-12 overflow-hidden">
                   <Image
                     src="/logo.png"
                     alt={`${SITE.name} logo`}
                     fill
                     sizes="48px"
-                    className="object-contain object-center p-1"
+                    className="object-contain object-left"
+                    unoptimized
                   />
                 </div>
                 <div>
@@ -96,7 +97,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-2.5 text-sm font-medium text-gold hover:bg-gold hover:text-navy hover:border-gold transition-all duration-200"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={2} />
-              Hubungi Kami
+              Contact Us
             </a>
 
             {/* Social Links */}
@@ -119,7 +120,7 @@ export default function Footer() {
           {/* ── Company Links ─────────────────────────────── */}
           <div className="space-y-5">
             <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-gold">
-              Perusahaan
+              Company
             </h3>
             <ul className="space-y-3" role="list">
               {FOOTER_LINKS.company.map((link) => (
@@ -142,7 +143,7 @@ export default function Footer() {
           {/* ── Services Links ────────────────────────────── */}
           <div className="space-y-5">
             <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-gold">
-              Layanan
+              Services
             </h3>
             <ul className="space-y-3" role="list">
               {FOOTER_LINKS.services.map((link) => (
@@ -165,7 +166,7 @@ export default function Footer() {
           {/* ── Contact Info ──────────────────────────────── */}
           <div className="space-y-5">
             <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-gold">
-              Kontak
+              Contact
             </h3>
             <ul className="space-y-4" role="list">
               <li>

@@ -50,9 +50,8 @@ export const EVENTS: Event[] = [
     venue: "Grand Hyatt Jakarta",
     category: "Corporate & Conference",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Corporate conference hall with attendees and stage lighting",
+    image: "/images/event-summit.jpg",
+    imageAlt: "International technology and leadership summit in a modern convention center auditorium",
     featured: true,
     capacity: 800,
     tags: ["tech", "summit", "corporate", "b2b"],
@@ -72,9 +71,8 @@ export const EVENTS: Event[] = [
     venue: "The Mulia Bali",
     category: "Gala & Award Night",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Elegant gala dinner setup with warm lighting and floral arrangements",
+    image: "/images/event-gala.jpg",
+    imageAlt: "Prestigious corporate gala awards night in a luxury ballroom setup",
     featured: true,
     capacity: 300,
     tags: ["gala", "awards", "luxury", "evening"],

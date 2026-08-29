@@ -3,7 +3,9 @@ import { SITE } from "@/lib/constants";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
+import ProcessSection from "@/components/home/ProcessSection";
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import UpcomingEventsSection from "@/components/home/UpcomingEventsSection";
 import CTABannerSection from "@/components/home/CTABannerSection";
 
@@ -18,7 +20,9 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <ProcessSection />
       <WhyChooseUsSection />
+      <TestimonialsSection />
       <UpcomingEventsSection />
       <CTABannerSection />
     </>

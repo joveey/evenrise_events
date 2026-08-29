@@ -46,29 +46,43 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "0px", amount: 0.1 }}
             className="relative"
           >
+            {/* Ambient gold glow behind image */}
+            <div
+              className="absolute -inset-4 rounded-3xl opacity-30 blur-2xl pointer-events-none"
+              style={{ background: "radial-gradient(circle, rgba(201,162,75,0.4) 0%, transparent 70%)" }}
+              aria-hidden="true"
+            />
+
             {/* Main photo */}
-            <div className="relative aspect-[4/5] w-full max-w-[500px] overflow-hidden rounded-2xl shadow-[0_32px_80px_-16px_rgba(11,27,51,0.18)]">
+            <div className="relative aspect-[4/3] sm:aspect-[4/3] w-full overflow-hidden rounded-2xl border border-cream-darker shadow-[0_24px_60px_-12px_rgba(11,27,51,0.18)]">
               <Image
-                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=85&auto=format&fit=crop"
-                alt="Elegant event venue set up by EvenRise Events"
+                src="/images/about-ballroom.jpg"
+                alt="Jakarta Executive Summit & Gala Dinner setup by EvenRise Events"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
+                className="object-cover object-center transition-transform duration-700 hover:scale-105"
                 priority
               />
               {/* Bottom gradient */}
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(to top, rgba(11,27,51,0.35) 0%, transparent 55%)",
+                  background: "linear-gradient(to top, rgba(11,27,51,0.45) 0%, transparent 60%)",
                 }}
                 aria-hidden="true"
               />
+              
+              {/* Venue badge overlay */}
+              <div className="absolute top-4 left-4 rounded-full border border-white/20 bg-navy/80 px-3.5 py-1 backdrop-blur-md">
+                <span className="font-body text-[10px] font-semibold uppercase tracking-widest text-gold-light">
+                  5-Star Executive Venue Setup
+                </span>
+              </div>
             </div>
 
             {/* Floating stat card */}
             <div
-              className="absolute -bottom-6 -right-4 hidden flex-col rounded-xl bg-navy px-7 py-5 shadow-[0_12px_40px_-4px_rgba(11,27,51,0.35)] sm:flex lg:-right-10"
+              className="absolute -bottom-6 -right-3 hidden flex-col rounded-2xl border border-gold/30 bg-navy px-8 py-5 shadow-[0_16px_40px_-4px_rgba(11,27,51,0.4)] sm:flex lg:-right-8"
               aria-hidden="true"
             >
               <span
@@ -82,20 +96,10 @@ export default function AboutSection() {
               >
                 150+
               </span>
-              <span className="mt-1.5 font-body text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">
-                Events Delivered
+              <span className="mt-1.5 font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
+                Summits & Galas Delivered
               </span>
             </div>
-
-            {/* Corner gold border accent */}
-            <div
-              className="pointer-events-none absolute -left-4 -top-4 hidden h-24 w-24 lg:block"
-              style={{
-                border: "1.5px solid rgba(201,162,75,0.4)",
-                borderRadius: "1rem",
-              }}
-              aria-hidden="true"
-            />
           </motion.div>
 
           {/* ── Right: Text column ─────────────────────────────────────────── */}
@@ -106,25 +110,11 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "0px", amount: 0.1 }}
             className="flex flex-col"
           >
-            {/* Eyebrow */}
-            <motion.div variants={fadeUp} className="flex items-center gap-3">
-              <span
-                className="block h-px w-9"
-                style={{
-                  background: "linear-gradient(90deg, #C9A24B 0%, rgba(201,162,75,0.25) 100%)",
-                }}
-                aria-hidden="true"
-              />
-              <p className="font-body text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
-                Who We Are
-              </p>
-            </motion.div>
-
             {/* Heading */}
             <motion.h2
               variants={fadeUp}
               id="about-heading"
-              className="mt-5 font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
+              className="font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
             >
               The Partner Behind{" "}
               <em className="italic">Every Great Event</em>
@@ -139,19 +129,19 @@ export default function AboutSection() {
 
             {/* Body copy */}
             <motion.div variants={fadeUp} className="mt-8 space-y-5">
-              <p className="font-body text-[0.9375rem] leading-[1.85] text-text-secondary">
+              <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
                 EvenRise Events was built on a simple belief: every gathering is
                 a story worth telling beautifully. We are a dedicated team of
                 event professionals committed to crafting experiences that are
                 memorable, seamless, and distinctly yours.
               </p>
-              <p className="font-body text-[0.9375rem] leading-[1.85] text-text-secondary">
+              <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
                 From large-scale corporate summits to intimate private
                 celebrations, we manage every detail — concept, logistics,
                 vendors, and on-the-day execution — so you can be fully present
                 in the moments that matter most.
               </p>
-              <p className="font-body text-[0.9375rem] leading-[1.85] text-text-secondary">
+              <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
                 Structured in approach, flexible in practice: EvenRise is not
                 just a vendor — we are your long-term strategic event partner.
               </p>

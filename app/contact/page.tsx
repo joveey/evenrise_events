@@ -251,10 +251,7 @@ export default function ContactPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-8 py-4 font-body text-sm font-semibold text-navy shadow-lg transition-all duration-200 hover:brightness-110"
-                  style={{
-                    background: "linear-gradient(135deg, #E8C97A 0%, #C9A24B 55%, #9C7A2E 100%)",
-                  }}
+                  className="btn btn-primary w-full sm:w-auto"
                 >
                   <MessageCircle className="h-4 w-4" strokeWidth={2} />
                   Chat on WhatsApp
@@ -407,17 +404,17 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group flex w-full items-center justify-center gap-2 rounded-xl bg-navy px-8 py-4 font-body text-sm font-semibold text-white transition-all hover:bg-navy-light disabled:cursor-not-allowed disabled:opacity-70"
+                      className="btn btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-70"
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="h-4 w-4 animate-spin text-gold" />
+                          <Loader2 className="h-4 w-4 animate-spin text-navy" />
                           Sending Message...
                         </>
                       ) : (
                         <>
                           Send Enquiry
-                          <Send className="h-4 w-4 text-gold transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" strokeWidth={2} />
+                          <Send className="h-4 w-4 text-navy transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" strokeWidth={2} />
                         </>
                       )}
                     </button>

@@ -11,55 +11,70 @@ export default function CTABannerSection() {
   );
 
   return (
-    <section className="relative bg-navy py-24 md:py-32">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
-      </div>
+    <section className="relative bg-navy py-28 md:py-36 overflow-hidden">
+      {/* Background glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,162,75,0.08) 0%, transparent 70%)",
+        }}
+      />
+      {/* Top separator line */}
+      <div className="absolute top-0 inset-x-0 h-px" style={{ background: "var(--gold-gradient)", opacity: 0.15 }} />
 
       <div className="container-site relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
           className="mx-auto max-w-2xl"
         >
-          {/* Eyebrow */}
-          <p className="mb-4 font-body text-xs font-medium uppercase tracking-widest text-gold text-gold-400">
-            Let&apos;s Create Something Remarkable
-          </p>
-
           {/* Heading */}
-          <h2 className="font-heading text-4xl font-light leading-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-heading text-5xl font-light leading-tight text-white sm:text-6xl md:text-7xl">
             Your next event
             <br />
-            <span className="italic text-gold">starts here.</span>
+            <em className="not-italic" style={{
+              background: "linear-gradient(135deg, #F0D882 0%, #C9A24B 60%, #9C7A2E 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              starts here.
+            </em>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-md font-body text-base text-white/70">
-            Tell us your vision — we&apos;ll take care of the rest. Our team is ready
-            to turn your ideas into an unforgettable experience.
+          <p className="mx-auto mt-6 max-w-md font-body text-base leading-relaxed text-white/55">
+            Tell us your vision — we&apos;ll take care of the rest. Our team is
+            ready to turn your ideas into an unforgettable experience.
           </p>
 
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          {/* Buttons — stacked on mobile, row on sm+ */}
+          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-4 font-body text-sm font-semibold text-navy transition-colors hover:bg-gold-light"
+              className="btn btn-primary w-full sm:w-auto"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={2} />
-              WhatsApp Us
+              WhatsApp Us Now
             </a>
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-gold px-8 py-4 font-body text-sm font-semibold text-gold transition-colors hover:bg-gold/10"
+              className="btn btn-outline w-full sm:w-auto"
             >
               <Mail className="h-4 w-4" strokeWidth={2} />
               Send an Email
             </Link>
           </div>
+
+          {/* Social proof line */}
+          <p className="mt-8 font-body text-xs text-white/30 tracking-wide">
+            Trusted by 200+ clients across Indonesia
+          </p>
         </motion.div>
       </div>
     </section>

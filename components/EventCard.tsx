@@ -54,7 +54,7 @@ function EventDetailDialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby="event-dialog-title"
-        className="fixed inset-x-4 top-1/2 z-50 max-h-[90vh] w-full max-w-2xl -translate-y-1/2 overflow-y-auto rounded-2xl bg-white shadow-[0_32px_80px_-8px_rgba(11,27,51,0.35)] md:inset-x-auto md:left-1/2 md:-translate-x-1/2"
+        className="fixed inset-x-4 top-1/2 z-50 max-h-[90vh] w-auto max-w-2xl -translate-y-1/2 overflow-y-auto rounded-2xl bg-white shadow-[0_32px_80px_-8px_rgba(11,27,51,0.35)] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full"
       >
         {/* Image */}
         <div className="relative h-52 w-full overflow-hidden rounded-t-2xl sm:h-64">
@@ -161,7 +161,7 @@ function EventDetailDialog({
           <div className="my-6 h-px bg-cream-dark" aria-hidden="true" />
 
           {/* Description */}
-          <p className="font-body text-[0.9375rem] leading-[1.8] text-text-secondary">
+          <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
             {event.description}
           </p>
 
@@ -172,17 +172,14 @@ function EventDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
               id={`event-dialog-whatsapp-${event.id}`}
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full px-7 py-3 font-body text-sm font-semibold text-navy transition-all duration-200 hover:brightness-110"
-              style={{
-                background: "linear-gradient(135deg, #E8C97A 0%, #C9A24B 55%, #9C7A2E 100%)",
-              }}
+              className="btn btn-primary"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
               Contact Us About This Event
             </a>
             <button
               onClick={onClose}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-navy/20 px-7 py-3 font-body text-sm font-medium text-navy/70 transition-colors hover:border-navy/40 hover:text-navy"
+              className="btn btn-outline border-navy/20 text-navy hover:border-gold hover:text-navy"
             >
               Close
             </button>

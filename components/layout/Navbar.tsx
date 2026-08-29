@@ -12,13 +12,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    handleScroll(); // initialise on mount
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change / resize
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setMenuOpen(false);
@@ -32,9 +31,9 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-in-out",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out",
         scrolled
-          ? "bg-navy shadow-[var(--shadow-nav)]"
+          ? "bg-navy/95 backdrop-blur-md shadow-[0_1px_20px_rgba(11,27,51,0.25)]"
           : "bg-transparent"
       )}
     >
@@ -54,14 +53,10 @@ export default function Navbar() {
               sizes="44px"
               className="object-contain object-center"
               priority
+              unoptimized
             />
           </div>
-          <span
-            className={cn(
-              "font-heading text-xl font-semibold tracking-wide transition-colors duration-300",
-              scrolled ? "text-cream" : "text-navy"
-            )}
-          >
+          <span className="font-heading text-xl font-light tracking-wide text-cream transition-colors duration-300 group-hover:text-gold">
             {SITE.name}
           </span>
         </Link>
@@ -72,15 +67,9 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={cn(
-                  "font-body text-sm font-medium tracking-wide transition-colors duration-200 relative group",
-                  scrolled
-                    ? "text-cream/80 hover:text-gold"
-                    : "text-navy/70 hover:text-navy"
-                )}
+                className="font-body text-sm font-medium tracking-wide text-cream/75 hover:text-gold transition-colors duration-200 relative group"
               >
                 {link.label}
-                {/* Animated underline */}
                 <span
                   className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full"
                   aria-hidden="true"
@@ -91,32 +80,25 @@ export default function Navbar() {
         </ul>
 
         {/* ── CTA Button ────────────────────────────────────── */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             id="navbar-cta-whatsapp"
             className={cn(
-              "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-wide",
-              "transition-all duration-200",
-              "border",
-              scrolled
-                ? "border-gold/60 bg-gold/10 text-gold hover:bg-gold hover:text-navy hover:border-gold"
-                : "border-gold bg-gold text-navy hover:bg-gold-dark hover:border-gold-dark"
+              "btn btn-sm",
+              scrolled ? "btn-outline" : "btn-primary"
             )}
           >
-            <MessageCircle className="h-4 w-4" strokeWidth={2} />
-            Hubungi Kami
+            <MessageCircle className="h-3.5 w-3.5" strokeWidth={2} />
+            Get in Touch
           </a>
         </div>
 
         {/* ── Mobile Hamburger ──────────────────────────────── */}
         <button
-          className={cn(
-            "md:hidden p-2 rounded-md transition-colors",
-            scrolled ? "text-cream hover:text-gold" : "text-navy hover:text-gold"
-          )}
+          className="md:hidden p-2 rounded-md text-cream/80 hover:text-gold transition-colors"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -134,20 +116,17 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-navy",
+          "md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-navy/98 backdrop-blur-md",
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
         aria-hidden={!menuOpen}
       >
-        <ul
-          className="container-site flex flex-col py-6 gap-1"
-          role="list"
-        >
+        <ul className="container-site flex flex-col py-6 gap-1" role="list">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block py-3 text-cream/80 hover:text-gold font-body text-base font-medium tracking-wide transition-colors duration-150 border-b border-white/5"
+                className="block py-3.5 text-cream/75 hover:text-gold font-body text-base font-medium tracking-wide transition-colors duration-150 border-b border-white/5"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -156,17 +135,17 @@ export default function Navbar() {
           ))}
 
           {/* Mobile CTA */}
-          <li className="pt-4">
+          <li className="pt-5">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               id="mobile-cta-whatsapp"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide bg-gold text-navy hover:bg-gold-dark transition-colors duration-200"
+              className="btn btn-primary w-full justify-center"
               onClick={() => setMenuOpen(false)}
             >
               <MessageCircle className="h-4 w-4" strokeWidth={2} />
-              Hubungi Kami via WhatsApp
+              Get in Touch via WhatsApp
             </a>
           </li>
         </ul>
