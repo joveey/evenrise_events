@@ -418,7 +418,7 @@ export default function ContactPage() {
                         onChange={(e) => setPhone(e.target.value)}
                         type="tel"
                         className="w-full rounded-xl border border-cream-darker bg-cream/30 px-3.5 py-2.5 font-body text-sm text-navy outline-none transition-colors focus:border-gold/60 focus:bg-white focus:ring-2 focus:ring-gold/20"
-                        placeholder="e.g. 082114962543"
+                        placeholder="e.g. 082114972543"
                       />
                     </div>
 

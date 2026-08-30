@@ -9,9 +9,9 @@ export const SITE = {
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
 export const CONTACT = {
-  whatsapp: "6282114962543",
+  whatsapp: "6282114972543",
   email: "hello@evenriseevents.com",
-  phone: "+62 821-1496-2543",
+  phone: "+62 821-1497-2543",
   address: {
     street: "Jl. Sudirman No. 123",
     city: "Jakarta Selatan",
