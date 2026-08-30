@@ -3,18 +3,19 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { CalendarDays, MapPin, Clock, Building2, X, MessageCircle, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { getWhatsAppUrl } from "@/lib/constants";
 import { type Event, formatEventDate } from "@/data/events";
 
 // ─── Category colour map ──────────────────────────────────────────────────────
 const CATEGORY_COLOURS: Record<string, string> = {
-  "Corporate & Conference": "#3B5998",
-  "Wedding & Celebration":  "#9B6B8F",
-  "Exhibition & Launch":    "#4A7C59",
-  "Seminar & Workshop":     "#7A6030",
-  "Gala & Award Night":     "#8B4513",
-  "Virtual & Hybrid":       "#2A6496",
+  "Tech Conference & Summit":     "#2563EB",
+  "Cybersecurity & Cloud Forum":  "#DC2626",
+  "IT Expo & Product Launch":     "#059669",
+  "Hackathon & Dev Challenge":    "#7C3AED",
+  "Developer Bootcamp & Workshop":"#D97706",
+  "Virtual & Hybrid Tech":        "#0891B2",
 };
 
 // ─── Event Detail Dialog ──────────────────────────────────────────────────────
@@ -175,14 +176,15 @@ function EventDetailDialog({
               className="btn btn-primary"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-              Contact Us About This Event
+              Inquire on WhatsApp
             </a>
-            <button
-              onClick={onClose}
+            <Link
+              href={`/events/${event.slug}`}
               className="btn btn-outline border-navy/20 text-navy hover:border-gold hover:text-navy"
             >
-              Close
-            </button>
+              View Full Event Page
+              <ArrowRight className="h-4 w-4 ml-1" />
+            </Link>
           </div>
         </div>
       </div>

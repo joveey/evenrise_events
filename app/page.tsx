@@ -10,7 +10,7 @@ import UpcomingEventsSection from "@/components/home/UpcomingEventsSection";
 import CTABannerSection from "@/components/home/CTABannerSection";
 
 export const metadata: Metadata = {
-  title: `${SITE.name} — ${SITE.tagline}`,
+  title: "EvenRise Events",
   description: SITE.description,
 };
 

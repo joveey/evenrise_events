@@ -5,31 +5,31 @@ import { motion } from "framer-motion";
 const PHASES = [
   {
     phase: "Phase 01",
-    title: "Strategic Brief & Curation",
+    title: "Strategic Brief & Tech Curation",
     description:
-      "Comprehensive stakeholder alignment, audience profiling, core KPI definition, and thematic narrative development.",
-    deliverables: ["Scope Definition", "Budget Modeling", "Venue Feasibility"],
+      "Stakeholder alignment, technical audience profiling, developer track definition, and keynote narrative development.",
+    deliverables: ["Tech Scope & Objectives", "Budget & Network Plan", "Venue & Power Audit"],
   },
   {
     phase: "Phase 02",
-    title: "Spatial & Technical Architecture",
+    title: "Spatial, Stage & IT Architecture",
     description:
-      "3D venue spatial mapping, acoustic engineering, custom stage drafting, and technical vendor consortium assembly.",
-    deliverables: ["Stage & AV Blueprint", "Vendor Master Contracts", "Run-of-Show Draft"],
+      "3D stage mapping, curved LED engineering, high-density fiber/Wi-Fi design, and technical vendor consortium assembly.",
+    deliverables: ["LED & AV Master Blueprint", "Network SLA & Redundancy", "Time-coded Run of Show"],
   },
   {
     phase: "Phase 03",
-    title: "Precision Live Execution",
+    title: "Precision Live Technical Execution",
     description:
-      "Command center management, time-coded cue calling, VIP protocol handling, and live broadcast transmission control.",
-    deliverables: ["On-Site Stage Directors", "Live Audience Logistics", "Risk Contingency Ops"],
+      "Central command center management, live code mirroring, 4K multi-camera show calling, and on-site network monitoring.",
+    deliverables: ["Live Stage Showcallers", "24/7 War-Room Ops", "Zero-Latency Stream Ops"],
   },
   {
     phase: "Phase 04",
-    title: "Analytics & Executive Debrief",
+    title: "Analytics, VOD & Debrief",
     description:
-      "Comprehensive attendee satisfaction evaluation, media impression audit, asset archiving, and final fiscal reconciliation.",
-    deliverables: ["Post-Event ROI Report", "Digital Asset Archive", "Vendor Reconciliations"],
+      "Attendee engagement metrics, stream telemetry, 4K session recording archiving, and comprehensive post-event review.",
+    deliverables: ["Telemetry & ROI Report", "Session VOD & Keynote Media", "Post-Show Reconciliation"],
   },
 ];
 
@@ -46,11 +46,11 @@ export default function ProcessSection() {
         >
           <div className="max-w-2xl flex flex-col items-center">
             <h2 className="font-heading text-4xl font-light leading-tight text-navy sm:text-5xl">
-              From Brief to{" "}
-              <em className="italic">Brilliant</em>
+              From Concept to{" "}
+              <em className="italic">Flawless Code & Keynote</em>
             </h2>
             <p className="mt-4 font-body text-base text-text-secondary leading-relaxed max-w-xl">
-              A structured operational delivery methodology refined across 150+ high-stakes summits, galas, and enterprise productions.
+              A structured operational delivery methodology refined across 150+ high-stakes summits, hackathons, and enterprise IT productions.
             </p>
           </div>
         </motion.div>

@@ -1,19 +1,19 @@
 // ─── Brand & Site ────────────────────────────────────────────────────────────
 export const SITE = {
   name: "EvenRise Events",
-  tagline: "Elevating Every Occasion",
+  tagline: "Premier IT & Tech Event Management",
   description:
-    "EvenRise Events is a premier event management company specializing in corporate gatherings, private celebrations, and large-scale productions. We craft experiences that leave lasting impressions.",
+    "EvenRise Events is Southeast Asia's leading technology event management and production partner — powering developer hackathons, enterprise AI summits, cybersecurity forums, and high-impact IT expos with broadcast-grade precision.",
   url: "https://www.evenriseevents.com",
 } as const;
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
 export const CONTACT = {
-  whatsapp: "6281234567890",           // placeholder — ganti dengan nomor asli
-  email: "hello@evenriseevents.com",   // placeholder
-  phone: "+62 812-3456-7890",          // placeholder
+  whatsapp: "6282114962543",
+  email: "hello@evenriseevents.com",
+  phone: "+62 821-1496-2543",
   address: {
-    street: "Jl. Sudirman No. 123",    // placeholder
+    street: "Jl. Sudirman No. 123",
     city: "Jakarta Selatan",
     province: "DKI Jakarta",
     country: "Indonesia",
@@ -29,10 +29,9 @@ export const getWhatsAppUrl = (message?: string) => {
   return `https://wa.me/${CONTACT.whatsapp}?text=${encoded}`;
 };
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: "Home",     href: "/" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Events",   href: "/events" },
   { label: "Contact",  href: "/contact" },
 ] as const;
@@ -40,16 +39,17 @@ export const NAV_LINKS = [
 // ─── Footer Quick Links ───────────────────────────────────────────────────────
 export const FOOTER_LINKS = {
   company: [
-    { label: "About Us",    href: "/#about" },
-    { label: "Our Services",href: "/#services" },
-    { label: "Upcoming Events", href: "/events" },
-    { label: "Contact Us",  href: "/contact" },
+    { label: "About Us",        href: "/#about" },
+    { label: "Our Services",    href: "/services" },
+    { label: "Tech Events",     href: "/events" },
+    { label: "Case Studies",    href: "/case-studies" },
+    { label: "Contact Us",      href: "/contact" },
   ],
   services: [
-    { label: "Corporate Events",   href: "/#services" },
-    { label: "Private Celebrations", href: "/#services" },
-    { label: "Gala Dinners",       href: "/#services" },
-    { label: "Conferences & Seminars", href: "/#services" },
+    { label: "Tech Summits & Keynotes", href: "/services" },
+    { label: "Developer Hackathons",    href: "/services" },
+    { label: "Enterprise IT Expos",     href: "/services" },
+    { label: "Hybrid Tech Broadcasts",  href: "/services" },
   ],
 } as const;
 

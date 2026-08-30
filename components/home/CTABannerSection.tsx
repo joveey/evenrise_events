@@ -7,7 +7,7 @@ import { getWhatsAppUrl } from "@/lib/constants";
 
 export default function CTABannerSection() {
   const whatsappUrl = getWhatsAppUrl(
-    "Hi EvenRise Events, I'd love to discuss planning an event with your team."
+    "Hi EvenRise Events, I'd like to discuss producing an upcoming tech summit, hackathon, or IT event."
   );
 
   return (
@@ -33,7 +33,7 @@ export default function CTABannerSection() {
         >
           {/* Heading */}
           <h2 className="font-heading text-5xl font-light leading-tight text-white sm:text-6xl md:text-7xl">
-            Your next event
+            Your next tech event
             <br />
             <em className="not-italic" style={{
               background: "linear-gradient(135deg, #F0D882 0%, #C9A24B 60%, #9C7A2E 100%)",
@@ -45,9 +45,8 @@ export default function CTABannerSection() {
             </em>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-md font-body text-base leading-relaxed text-white/55">
-            Tell us your vision — we&apos;ll take care of the rest. Our team is
-            ready to turn your ideas into an unforgettable experience.
+          <p className="mx-auto mt-6 max-w-md font-body text-base leading-relaxed text-white/60">
+            From flagship developer congresses to 48-hour hackathons and enterprise product launches — let&apos;s build an extraordinary tech experience together.
           </p>
 
           {/* Buttons — stacked on mobile, row on sm+ */}
@@ -67,13 +66,13 @@ export default function CTABannerSection() {
               className="btn btn-outline w-full sm:w-auto"
             >
               <Mail className="h-4 w-4" strokeWidth={2} />
-              Send an Email
+              Send an Enquiry
             </Link>
           </div>
 
           {/* Social proof line */}
-          <p className="mt-8 font-body text-xs text-white/30 tracking-wide">
-            Trusted by 200+ clients across Indonesia
+          <p className="mt-8 font-body text-xs text-white/40 tracking-wide">
+            Trusted by 200+ technology leaders and enterprises across Southeast Asia
           </p>
         </motion.div>
       </div>

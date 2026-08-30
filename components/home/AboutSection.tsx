@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { useRef } from "react";
 
 // ─── Stats ────────────────────────────────────────────────────────────────────
 const STATS = [
-  { value: "150+", label: "Events Delivered" },
-  { value: "200+", label: "Satisfied Clients" },
-  { value: "8+",   label: "Years of Experience" },
+  { value: "150+", label: "Tech Summits & Expos" },
+  { value: "200+", label: "Enterprise IT Clients" },
+  { value: "99.9%", label: "Live Stream Uptime" },
 ];
 
 // ─── Animation Variants ────────────────────────────────────────────────────────
@@ -56,12 +55,13 @@ export default function AboutSection() {
             {/* Main photo */}
             <div className="relative aspect-[4/3] sm:aspect-[4/3] w-full overflow-hidden rounded-2xl border border-cream-darker shadow-[0_24px_60px_-12px_rgba(11,27,51,0.18)]">
               <Image
-                src="/images/about-ballroom.jpg"
-                alt="Jakarta Executive Summit & Gala Dinner setup by EvenRise Events"
+                src="/images/about-tech-production.jpg"
+                alt="High-tech enterprise exhibition and conference experience zone produced by EvenRise Events"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"
                 priority
+                unoptimized
               />
               {/* Bottom gradient */}
               <div
@@ -72,10 +72,10 @@ export default function AboutSection() {
                 aria-hidden="true"
               />
               
-              {/* Venue badge overlay */}
+              {/* Badge overlay */}
               <div className="absolute top-4 left-4 rounded-full border border-white/20 bg-navy/80 px-3.5 py-1 backdrop-blur-md">
                 <span className="font-body text-[10px] font-semibold uppercase tracking-widest text-gold-light">
-                  5-Star Executive Venue Setup
+                  Enterprise Tech Event Production
                 </span>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function AboutSection() {
                 150+
               </span>
               <span className="mt-1.5 font-body text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
-                Summits & Galas Delivered
+                Tech Events Delivered
               </span>
             </div>
           </motion.div>
@@ -116,8 +116,8 @@ export default function AboutSection() {
               id="about-heading"
               className="font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
             >
-              The Partner Behind{" "}
-              <em className="italic">Every Great Event</em>
+              Architects of{" "}
+              <em className="italic">Transformative Tech Experiences</em>
             </motion.h2>
 
             {/* Gold divider */}
@@ -130,20 +130,13 @@ export default function AboutSection() {
             {/* Body copy */}
             <motion.div variants={fadeUp} className="mt-8 space-y-5">
               <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
-                EvenRise Events was built on a simple belief: every gathering is
-                a story worth telling beautifully. We are a dedicated team of
-                event professionals committed to crafting experiences that are
-                memorable, seamless, and distinctly yours.
+                EvenRise Events is a specialized event production agency engineered for the modern technology sector. We combine architectural stage design, enterprise IT networking, and broadcast-grade technical operations to deliver world-class experiences.
               </p>
               <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
-                From large-scale corporate summits to intimate private
-                celebrations, we manage every detail — concept, logistics,
-                vendors, and on-the-day execution — so you can be fully present
-                in the moments that matter most.
+                From high-stakes developer hackathons and multi-track AI summits to high-impact product reveals and interactive software expos — our teams manage end-to-end stage scenography, gigabit network reliability, speaker coordination, and seamless live execution.
               </p>
               <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">
-                Structured in approach, flexible in practice: EvenRise is not
-                just a vendor — we are your long-term strategic event partner.
+                Trusted by leading tech enterprises, venture capitals, and high-growth unicorns across Southeast Asia as their long-term strategic event partner.
               </p>
             </motion.div>
 

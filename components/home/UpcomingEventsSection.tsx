@@ -48,15 +48,14 @@ export default function UpcomingEventsSection() {
               id="events-heading"
               className="font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
             >
-              What We&apos;re Working On
+              Upcoming Tech Events
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               className="mt-4 font-body text-base leading-relaxed text-text-secondary"
             >
-              A look at what our team is currently organising — and what&apos;s
-              coming up next. Click any event to learn more.
+              A curated look at the developer summits, hackathons, and enterprise IT conferences our production team is currently staging.
             </motion.p>
           </div>
         </motion.div>
@@ -89,7 +88,7 @@ export default function UpcomingEventsSection() {
             id="events-view-all"
             className="group inline-flex items-center gap-2.5 rounded-full border border-navy/20 px-8 py-3.5 font-body text-sm font-medium text-navy transition-all duration-200 hover:border-gold hover:text-gold"
           >
-            View All Events
+            View All Tech Events
             <ArrowRight
               className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
               strokeWidth={1.75}

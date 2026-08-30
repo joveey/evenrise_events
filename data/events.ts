@@ -1,12 +1,11 @@
 // ─── Event Data Types ──────────────────────────────────────────────────────────
-
 export type EventCategory =
-  | "Corporate & Conference"
-  | "Wedding & Celebration"
-  | "Exhibition & Launch"
-  | "Seminar & Workshop"
-  | "Gala & Award Night"
-  | "Virtual & Hybrid";
+  | "Tech Conference & Summit"
+  | "Cybersecurity & Cloud Forum"
+  | "IT Expo & Product Launch"
+  | "Hackathon & Dev Challenge"
+  | "Developer Bootcamp & Workshop"
+  | "Virtual & Hybrid Tech";
 
 export type EventStatus = "upcoming" | "past";
 
@@ -23,242 +22,233 @@ export interface Event {
   venue?: string;              // venue name
   category: EventCategory;
   status: EventStatus;
-  image: string;               // Unsplash URL
+  image: string;               // URL
   imageAlt: string;
   featured?: boolean;          // shown on homepage preview
   capacity?: number;
   tags?: string[];
 }
 
-// ─── All Events ───────────────────────────────────────────────────────────────
+// ─── All IT & Tech Events ──────────────────────────────────────────────────────
 
 export const EVENTS: Event[] = [
   // ── Upcoming ──────────────────────────────────────────────────────────────
 
   {
     id: "evt-001",
-    slug: "techforward-annual-summit-2025",
-    title: "TechForward Annual Summit 2025",
+    slug: "techforward-ai-cloud-summit-2025",
+    title: "TechForward AI & Cloud Summit 2025",
     shortDescription:
-      "A premier gathering of industry leaders, innovators, and decision-makers shaping the future of technology in Southeast Asia.",
+      "A premier gathering of 1,000+ CTOs, AI researchers, and cloud architects shaping enterprise digital transformation in Southeast Asia.",
     description:
-      "TechForward Annual Summit brings together 800+ technology executives, startup founders, and investors across two days of keynotes, panel discussions, and curated networking sessions. EvenRise manages end-to-end production, speaker logistics, and on-site coordination for this flagship regional event.",
+      "TechForward AI & Cloud Summit brings together industry pioneers, enterprise technology executives, and AI practitioners across two days of keynote stages, architectural breakout tracks, and curated C-suite networking. EvenRise delivers end-to-end stage scenography, VIP speaker protocol, and technical live production.",
     date: "2025-09-20",
     endDate: "2025-09-21",
     time: "08:00 – 18:00 WIB",
     location: "Jakarta, Indonesia",
-    venue: "Grand Hyatt Jakarta",
-    category: "Corporate & Conference",
+    venue: "Grand Hyatt Jakarta & Convention Ballroom",
+    category: "Tech Conference & Summit",
     status: "upcoming",
-    image: "/images/event-summit.jpg",
-    imageAlt: "International technology and leadership summit in a modern convention center auditorium",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Keynote presentation at a premier international technology and AI summit",
     featured: true,
-    capacity: 800,
-    tags: ["tech", "summit", "corporate", "b2b"],
+    capacity: 1000,
+    tags: ["ai", "cloud", "summit", "enterprise", "tech"],
   },
 
   {
     id: "evt-002",
-    slug: "aurora-gala-dinner-2025",
-    title: "Aurora Gala Dinner & Awards",
+    slug: "cybershield-national-security-forum-2025",
+    title: "CyberShield Enterprise Security Forum & Awards",
     shortDescription:
-      "An elegant evening celebrating excellence across industries — fine dining, live entertainment, and the night's most prestigious awards.",
+      "The benchmark conference for cybersecurity leaders, zero-trust architects, and data defense practitioners in Southeast Asia.",
     description:
-      "Aurora Gala Dinner & Awards is an annual black-tie celebration recognising outstanding achievements across multiple industry sectors. EvenRise handles the full creative concept — from table décor and lighting design to entertainment curation and award production — ensuring a seamless evening of prestige and warmth.",
+      "CyberShield brings together over 400 Chief Information Security Officers (CISOs), ethical hackers, and enterprise defense leaders. EvenRise oversees the dark-mode cyber stage scenography, interactive threat-simulation rooms, and the prestigious Cybersecurity Excellence Gala Dinner.",
     date: "2025-10-04",
-    time: "18:30 – 23:00 WITA",
-    location: "Bali, Indonesia",
-    venue: "The Mulia Bali",
-    category: "Gala & Award Night",
+    time: "08:30 – 21:00 WIB",
+    location: "Jakarta, Indonesia",
+    venue: "The Ritz-Carlton Mega Kuningan",
+    category: "Cybersecurity & Cloud Forum",
     status: "upcoming",
-    image: "/images/event-gala.jpg",
-    imageAlt: "Prestigious corporate gala awards night in a luxury ballroom setup",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "High-tech cybersecurity forum with digital light displays and executive delegates",
     featured: true,
-    capacity: 300,
-    tags: ["gala", "awards", "luxury", "evening"],
+    capacity: 450,
+    tags: ["cybersecurity", "infosec", "zero-trust", "awards", "b2b"],
   },
 
   {
     id: "evt-003",
-    slug: "trade-expo-indonesia-pavilion-2025",
-    title: "Trade Expo Indonesia Pavilion",
+    slug: "indotech-expo-innovation-pavilion-2025",
+    title: "IndoTech Expo & Enterprise Software Pavilion",
     shortDescription:
-      "Managing the national pavilion and brand experience for Indonesia's largest international trade exhibition.",
+      "Showcasing 120+ leading enterprise SaaS solutions, AI platforms, and robotics innovations to 8,000+ industry professionals.",
     description:
-      "EvenRise is appointed as the official production partner for the national pavilion at Trade Expo Indonesia 2025. Our scope covers booth design and construction, experiential zone management, daily operations, and VIP tour coordination across the five-day event at ICE BSD City.",
+      "EvenRise is the appointed production and operations partner for IndoTech Expo 2025. Scope includes turnkey booth engineering, developer demo zones, silent theater audio setups, and integrated digital badge registration across 3 massive exhibition halls at ICE BSD City.",
     date: "2025-10-17",
-    endDate: "2025-10-21",
-    time: "09:00 – 17:00 WIB",
+    endDate: "2025-10-20",
+    time: "09:00 – 17:30 WIB",
     location: "Tangerang, Indonesia",
-    venue: "ICE BSD City",
-    category: "Exhibition & Launch",
+    venue: "ICE BSD City (Hall 1–3)",
+    category: "IT Expo & Product Launch",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Large exhibition hall with booths, displays, and crowd",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Modern tech exhibition hall with interactive demo booths and crowds",
     featured: true,
-    capacity: 5000,
-    tags: ["exhibition", "trade", "b2b", "national"],
+    capacity: 8000,
+    tags: ["expo", "saas", "software", "innovation", "enterprise"],
   },
 
   {
     id: "evt-004",
-    slug: "heritage-wedding-raisa-dion-2025",
-    title: "Heritage Wedding — Raisa & Dion",
+    slug: "fintech-dev-hackathon-2025",
+    title: "FinTech & Web3 Developer 48-Hour Hackathon",
     shortDescription:
-      "An intimate garden wedding with a heritage Javanese aesthetic, blending tradition with understated modern elegance.",
+      "An intensive 48-hour continuous coding sprint uniting 400+ top software engineers to build next-generation payment and AI agent protocols.",
     description:
-      "Raisa and Dion's wedding was a refined celebration of cultural heritage and intimate love. EvenRise curated every element — from the hand-batik table runners and floral installations to the 12-course tasting menu and live gamelan ensemble — creating a day that felt deeply personal and extraordinarily beautiful.",
+      "A high-octane engineering marathon designed for developers, solution architects, and UI/UX specialists. EvenRise manages 24/7 high-speed fiber infrastructure, technical war rooms, catering stations, live countdown graphics, and the grand finale stage presentations with live jury scoring.",
     date: "2025-11-08",
-    time: "10:00 – 22:00 WIB",
-    location: "Yogyakarta, Indonesia",
-    venue: "Plataran Heritage Borobudur",
-    category: "Wedding & Celebration",
+    endDate: "2025-11-10",
+    time: "48 Hours Non-stop",
+    location: "Bandung, Indonesia",
+    venue: "Telkom Landmark Innovation Center",
+    category: "Hackathon & Dev Challenge",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Elegant outdoor wedding ceremony with floral arch and warm golden lighting",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Developer hackathon with engineers coding on multiple monitors and laptops",
     featured: false,
-    capacity: 120,
-    tags: ["wedding", "javanese", "heritage", "garden"],
+    capacity: 400,
+    tags: ["hackathon", "developers", "fintech", "coding", "web3"],
   },
 
   {
     id: "evt-005",
-    slug: "digital-leadership-workshop-2025",
-    title: "Digital Leadership & Innovation Workshop",
+    slug: "kubernetes-platform-engineering-bootcamp-2025",
+    title: "Enterprise Kubernetes & SRE Platform Bootcamp",
     shortDescription:
-      "A hands-on two-day workshop for senior executives navigating digital transformation and leading high-performance teams.",
+      "An intensive, hands-on workshop track for DevOps leads and cloud engineers mastering multi-cloud resilience and GitOps pipelines.",
     description:
-      "Designed for C-suite and senior management, this intensive workshop combines expert facilitation, case-study analysis, and collaborative sprint sessions. EvenRise manages venue setup, AV production, catering, and participant materials — ensuring a focused and distraction-free learning environment.",
+      "Designed for senior platform engineers and DevOps managers, this two-day immersive technical bootcamp combines hands-on cluster failure simulations, live debugging challenges, and architecture deep-dives. EvenRise facilitates dedicated lab pod environments, audio-visual optimization, and executive delegate amenities.",
     date: "2025-11-20",
     endDate: "2025-11-21",
-    time: "08:30 – 17:00 WIB",
+    time: "08:30 – 17:30 WIB",
     location: "Jakarta, Indonesia",
     venue: "The Langham Jakarta",
-    category: "Seminar & Workshop",
+    category: "Developer Bootcamp & Workshop",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Modern workshop room with presentation screen and participants",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Software engineers in a technical training room collaborating on architectural blueprints",
     featured: false,
-    capacity: 60,
-    tags: ["workshop", "leadership", "digital", "executive"],
+    capacity: 120,
+    tags: ["kubernetes", "devops", "cloud", "workshop", "sre"],
   },
 
   {
     id: "evt-006",
-    slug: "nexgen-product-launch-2025",
-    title: "NexGen Automotive — Regional Launch Event",
+    slug: "quantum-edge-ai-hardware-launch-2025",
+    title: "Quantum Edge & Neural AI Hardware Reveal",
     shortDescription:
-      "A high-impact regional product unveiling for a leading automotive brand, combining spectacle with precise brand storytelling.",
+      "A dramatic product reveal event unveiling next-generation neural processing units and edge AI appliances for enterprise data centers.",
     description:
-      "EvenRise was engaged to produce NexGen Automotive's regional launch across Jakarta, Surabaya, and Medan. Our team developed the creative concept, managed the reveal production, coordinated media attendance, and delivered a consistent brand experience across all three cities within a single week.",
+      "EvenRise produced this high-impact product launch event featuring theatrical holographic projections, dynamic motorized LED split-screens, synchronized laser lighting, and live hands-on benchmark testing zones for 500 enterprise IT directors and technology journalists.",
     date: "2025-12-03",
-    endDate: "2025-12-07",
-    time: "19:00 – 22:00 WIB",
-    location: "Jakarta · Surabaya · Medan",
-    venue: "Multi-city Roadshow",
-    category: "Exhibition & Launch",
+    time: "18:00 – 21:30 WIB",
+    location: "Jakarta, Indonesia",
+    venue: "Fairmont Hotel Grand Ballroom",
+    category: "IT Expo & Product Launch",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Sleek product launch event with dramatic lighting and stage reveal",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Futuristic hardware product launch with glowing circuit aesthetic and stage spotlights",
     featured: false,
-    capacity: 400,
-    tags: ["launch", "automotive", "roadshow", "brand"],
+    capacity: 500,
+    tags: ["hardware", "launch", "deeptech", "ai", "keynote"],
   },
 
   {
     id: "evt-007",
-    slug: "elevate-hybrid-summit-2025",
-    title: "Elevate HR & People Summit — Hybrid Edition",
+    slug: "apac-dataops-distributed-systems-hybrid-summit-2025",
+    title: "APAC DataOps & Distributed Systems Hybrid Summit",
     shortDescription:
-      "A progressive HR conference bringing together 2,000+ people leaders — live in Jakarta, streamed globally.",
+      "Connecting 2,500+ data engineers and ML architects — live in Jakarta with interactive streaming hubs in Singapore and Tokyo.",
     description:
-      "Elevate is Southeast Asia's fastest-growing HR conference, and our hybrid production team makes it accessible worldwide. EvenRise manages live stage production at the Jakarta venue, multi-camera livestream, digital engagement tools, virtual breakout rooms, and post-event replay distribution — delivering a cohesive experience for both in-room and online audiences.",
+      "A flagship multi-hub hybrid event connecting distributed engineering teams across APAC. EvenRise powers the low-latency multi-camera satellite uplinks, synchronized live Q&A hubs, interactive digital breakout rooms, and high-definition on-demand recording architecture.",
     date: "2025-12-12",
-    time: "09:00 – 17:00 WIB",
-    location: "Jakarta, Indonesia",
-    venue: "Assembly Hall Jakarta Convention Center",
-    category: "Virtual & Hybrid",
+    time: "09:00 – 18:00 WIB",
+    location: "Jakarta · Singapore · Tokyo",
+    venue: "Jakarta Convention Center & Global Stream",
+    category: "Virtual & Hybrid Tech",
     status: "upcoming",
-    image:
-      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Hybrid event production setup with broadcast screens and live audience",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Hybrid tech conference stage with live stream broadcast monitors and delegates",
     featured: false,
-    capacity: 2000,
-    tags: ["hr", "hybrid", "summit", "people"],
+    capacity: 2500,
+    tags: ["data", "distributed-systems", "hybrid", "streaming", "apac"],
   },
 
   // ── Past ──────────────────────────────────────────────────────────────────
 
   {
     id: "evt-008",
-    slug: "peak-leadership-forum-2024",
-    title: "PEAK Leadership Forum 2024",
+    slug: "asean-ciso-cloud-security-summit-2024",
+    title: "ASEAN CISO Cloud Governance & Security Summit 2024",
     shortDescription:
-      "An annual gathering for 300 senior executives exploring strategy, resilience, and leadership in a post-digital era.",
+      "An exclusive, closed-door symposium for 300 cybersecurity chiefs addressing regional data privacy laws and zero-day threat defense.",
     description:
-      "PEAK Leadership Forum is a curated, invitation-only forum bringing together the region's most accomplished business leaders. EvenRise delivered full event production — venue transformation, speaker management, curated dining experience, and post-forum publication materials — for the second consecutive year.",
+      "An invitation-only executive forum for banking, government, and telecommunications security leaders. EvenRise managed full confidential roundtables, acoustic dampening protocols, encrypted digital polling systems, and five-star private executive dining.",
     date: "2024-11-14",
     endDate: "2024-11-15",
     time: "08:00 – 18:00 WIB",
     location: "Jakarta, Indonesia",
     venue: "Raffles Jakarta",
-    category: "Corporate & Conference",
+    category: "Cybersecurity & Cloud Forum",
     status: "past",
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Executive conference panel with speakers on stage",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Executive panel discussion on enterprise technology strategy and security",
     featured: false,
     capacity: 300,
-    tags: ["leadership", "forum", "executive", "annual"],
+    tags: ["ciso", "cloud", "security", "leadership", "executive"],
   },
 
   {
     id: "evt-009",
-    slug: "luminary-gala-2024",
-    title: "Luminary Gala 2024",
+    slug: "indonesia-opensource-ai-con-2024",
+    title: "Indonesia Open Source Software & AI Con 2024",
     shortDescription:
-      "A charity gala evening raising funds for education access initiatives, featuring a live auction and world-class entertainment.",
+      "Over 1,200 software engineers celebrating open-source frameworks, high-throughput databases, and LLM tooling across 6 technical tracks.",
     description:
-      "Luminary Gala is an annual fundraising gala supporting underprivileged students across Indonesia. EvenRise managed the full event production — theming, floral design, AV, entertainment bookings, and the live auction production — helping the foundation raise a record-breaking sum in a single evening.",
+      "Indonesia's largest community and enterprise open-source convention. EvenRise handled rapid 6-track parallel stage management, community booth villages, live code showcase stages, and sponsor brand activations.",
     date: "2024-12-07",
-    time: "18:00 – 23:30 WIB",
+    time: "09:00 – 19:00 WIB",
     location: "Jakarta, Indonesia",
-    venue: "The Ritz-Carlton Pacific Place",
-    category: "Gala & Award Night",
+    venue: "Balai Kartini Convention Center",
+    category: "Tech Conference & Summit",
     status: "past",
-    image:
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Glamorous charity gala with stage and decorated ballroom",
+    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Vibrant tech conference auditorium filled with software developers and technology enthusiasts",
     featured: false,
-    capacity: 450,
-    tags: ["charity", "gala", "fundraiser", "social"],
+    capacity: 1200,
+    tags: ["opensource", "software", "ai", "developers", "conference"],
   },
 
   {
     id: "evt-010",
-    slug: "blossom-wedding-yuki-marco-2024",
-    title: "Blossom Garden Wedding — Yuki & Marco",
+    slug: "fintech-infrastructure-payment-demo-day-2024",
+    title: "FinTech Infrastructure & Core Banking Demo Day 2024",
     shortDescription:
-      "A multi-cultural celebration uniting Japanese and Italian traditions in a lush Bali garden setting.",
+      "A high-stakes presentation arena where 20 fintech infrastructure innovators demonstrated real-time ledger and instant payment APIs.",
     description:
-      "Yuki and Marco's wedding was a beautiful cross-cultural union — a three-day celebration blending Japanese ikebana arrangements with Italian al-fresco dining. EvenRise coordinated all vendor management, cultural ceremony logistics, guest experience touchpoints, and the final gala evening reception.",
+      "EvenRise orchestrated the live technical stage feeds, real-time code projection, digital investor scoring consoles, and bespoke networking cocktail reception connecting founders with institutional tech funds across APAC.",
     date: "2024-09-21",
-    endDate: "2024-09-23",
-    time: "16:00 – 23:00 WITA",
+    time: "13:00 – 20:00 WIB",
     location: "Bali, Indonesia",
-    venue: "Alila Villas Uluwatu",
-    category: "Wedding & Celebration",
+    venue: "W Bali Seminyak & Tech Amphitheater",
+    category: "IT Expo & Product Launch",
     status: "past",
-    image:
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Garden wedding ceremony in Bali with tropical floral decor",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80&auto=format&fit=crop",
+    imageAlt: "Tech founders and investors at a high-end fintech demo day presentation",
     featured: false,
-    capacity: 80,
-    tags: ["wedding", "multicultural", "bali", "destination"],
+    capacity: 250,
+    tags: ["fintech", "banking", "demoday", "investors", "software"],
   },
 ];
 
@@ -266,12 +256,12 @@ export const EVENTS: Event[] = [
 
 /** All unique category values present in data. */
 export const ALL_CATEGORIES: EventCategory[] = [
-  "Corporate & Conference",
-  "Wedding & Celebration",
-  "Exhibition & Launch",
-  "Seminar & Workshop",
-  "Gala & Award Night",
-  "Virtual & Hybrid",
+  "Tech Conference & Summit",
+  "Cybersecurity & Cloud Forum",
+  "IT Expo & Product Launch",
+  "Hackathon & Dev Challenge",
+  "Developer Bootcamp & Workshop",
+  "Virtual & Hybrid Tech",
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

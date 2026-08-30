@@ -6,68 +6,68 @@ import { ServiceCard } from "@/components/ServiceCard";
 const SERVICES = [
   {
     index: "01",
-    title: "Corporate Summits & Leadership Forums",
+    title: "Tech Summits & Keynote Conferences",
     description:
-      "High-level regional conferences, C-suite roundtables, and annual general meetings delivered with precision protocol and broadcast-grade technical execution.",
+      "Flagship developer conferences, C-level tech summits, and multi-track congresses delivered with curved panoramic LED scenography and broadcast-grade production.",
     capabilities: [
-      "Keynote Stage & Curved LED Scenography",
-      "VIP Delegate Protocol & C-Suite Logistics",
-      "Simultaneous Interpretation & Live Broadcast",
+      "Curved LED Video Walls & Cyber Stage",
+      "Multi-Track Agenda & Speaker Protocol",
+      "Simultaneous Interpretation & 4K Stream",
     ],
   },
   {
     index: "02",
-    title: "Trade Exhibitions & Brand Pavilions",
+    title: "Enterprise IT Expos & Product Reveals",
     description:
-      "World-class exhibition environments, custom modular pavilions, and immersive product reveal staging designed to maximize brand influence.",
+      "Immersive exhibition environments, modular developer demo pods, and dramatic tech hardware launches designed to maximize developer engagement.",
     capabilities: [
-      "Architectural Booth Engineering & Build",
-      "Experiential Technology & Interactive Demos",
-      "Delegate Flow & Badge Registration Systems",
+      "Interactive Demo Pod Engineering",
+      "Experiential Tech Booth Builds",
+      "Real-Time Digital Badge & Flow Control",
     ],
   },
   {
     index: "03",
-    title: "Annual Galas & Prestige Award Ceremonies",
+    title: "Developer Hackathons & Code Arenas",
     description:
-      "Black-tie gala dinners and industry accolade evenings characterized by dramatic lighting, five-star culinary orchestration, and flawless stage timing.",
+      "48-hour continuous coding marathons, capture-the-flag competitions, and innovation challenges backed by redundant gigabit networks.",
     capabilities: [
-      "Fine Dining Tabletop & Floral Artistry",
-      "Award Production & Multi-Camera Show Calling",
-      "Celebrity Entertainment & Orchestral Curation",
+      "Redundant High-Density Wi-Fi / Fiber",
+      "24/7 War Room & Power Infrastructure",
+      "Live Code Projection & Jury Consoles",
     ],
   },
   {
     index: "04",
-    title: "Executive Seminars & Thought-Leadership",
+    title: "Technical Bootcamps & Hands-on Workshops",
     description:
-      "Curated knowledge-sharing formats and executive workshop tracks that cultivate high engagement, strategic dialogue, and productive collaboration.",
+      "Intensive architecture training tracks and deep-dive technical workshops fostering hands-on code labs and engineering breakthroughs.",
     capabilities: [
-      "Acoustic & Audio Optimization",
-      "Executive Hospitality & Delegate Kits",
-      "Interactive Q&A & Real-Time Polling",
+      "Dedicated Lab Pod Setup & Audio Sync",
+      "Executive Delegate Tech Amenities",
+      "Interactive Live Q&A & Code Polling",
     ],
   },
   {
     index: "05",
-    title: "Bespoke Celebrations & Private Galas",
+    title: "Tech Leadership Awards & CISO Dinners",
     description:
-      "Discreet, highly curated landmark anniversaries and private milestones designed with timeless architectural styling and uncompromising hospitality.",
+      "Prestige tech accolade evenings, investor networking dinners, and invitation-only CISO roundtables executed with refined luxury and discretion.",
     capabilities: [
-      "5-Star Destination Venue Scouting",
-      "Custom Spatial Atmosphere & Lighting",
-      "Dedicated Private Concierge Team",
+      "5-Star Venue Curation & Ambient Tech Lighting",
+      "Multi-Camera Award Show Direction",
+      "VIP C-Suite Protocol & Privacy",
     ],
   },
   {
     index: "06",
-    title: "Hybrid & Multi-City Broadcast Summits",
+    title: "Hybrid Broadcasts & Multi-Hub Streams",
     description:
-      "Synchronous multi-hub productions connecting physical stages across Jakarta, Singapore, and regional financial centers via low-latency secure streaming.",
+      "Synchronous multi-city tech broadcasts connecting physical developer hubs across Jakarta, Singapore, and global hubs via ultra-low latency feeds.",
     capabilities: [
-      "Multi-City Live Satellite/Fiber Feeds",
-      "Secure Enterprise Streaming Portals",
-      "Post-Event Analytics & On-Demand Replay",
+      "Multi-City Low Latency Uplinks",
+      "Enterprise Interactive Streaming Portals",
+      "Post-Event Tech VOD & Telemetry",
     ],
   },
 ] as const;
@@ -104,15 +104,15 @@ export default function ServicesSection() {
               id="services-heading"
               className="font-heading text-4xl font-light leading-tight tracking-tight text-navy sm:text-5xl"
             >
-              Services Tailored to{" "}
-              <em className="italic">Every Occasion</em>
+              Services Engineered for{" "}
+              <em className="italic">Technology Leaders</em>
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               className="mt-4 font-body text-base leading-relaxed text-text-secondary max-w-xl"
             >
-              End-to-end event management frameworks built for corporate excellence, institutional scale, and uncompromising precision.
+              End-to-end event management frameworks built specifically for developer ecosystems, enterprise IT scale, and zero-downtime execution.
             </motion.p>
           </div>
         </motion.div>

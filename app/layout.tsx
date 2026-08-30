@@ -8,16 +8,17 @@ import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 // ─── Site Metadata ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
-    template: `%s | ${SITE.name}`,
+    default: "EvenRise Events",
+    template: "%s | EvenRise Events",
   },
   description: SITE.description,
   keywords: [
-    "event organizer",
-    "event management",
-    "corporate events",
-    "wedding organizer",
-    "gala dinner",
+    "tech event organizer",
+    "IT conference management",
+    "developer hackathon organizer",
+    "cybersecurity summit",
+    "corporate tech events",
+    "IT expo production",
     "Jakarta",
     "Indonesia",
     "EvenRise Events",
